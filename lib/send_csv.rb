@@ -1,9 +1,15 @@
 module SendCsv
-  VERSION = '0.1'
+  VERSION = '0.2'
 end
 
-class ApplicationController
+require 'action_controller'  # Make sure ActionController::Base is defined
+
+ActionController::Base.class_eval do
+  private
+
   def send_csv(lines, options = {})
+    require 'csv'
+    
     options = options.dup
     encoding = options.delete(:encoding) || 'ISO-8859-1'
     
@@ -18,4 +24,3 @@ class ApplicationController
     send_data csv, options
   end
 end
-
