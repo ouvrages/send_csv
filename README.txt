@@ -1,26 +1,31 @@
 = send_csv
 
-* FIX (url)
+* https://github.com/ouvrages/send_csv
 
 == DESCRIPTION:
 
-FIX (describe your package)
-
-== FEATURES/PROBLEMS:
-
-* FIX (list of features or problems)
+Adds a send_csv method to ApplicationController
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  class MyController < ApplicationController
+    def export
+      lines = []
+      lines << ["Name", "e-mail"]
+      lines += Users.all.map { |user| [user.name, user.email]
+      send_csv(lines, :filename => "exported_users.csv")
+    end
+  end
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* csv (bundled with Ruby)
+* ApplicationController with a #send_file method (bundled with Rails)
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* add this to your Gemfile and run "bundle install":
+  gem "send_csv"
 
 == DEVELOPERS:
 
@@ -35,7 +40,7 @@ and generate the RDoc.
 
 (The MIT License)
 
-Copyright (c) 2011 FIX
+Copyright (c) 2011 Ouvrages
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
