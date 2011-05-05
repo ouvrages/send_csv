@@ -4,7 +4,7 @@
 
 == DESCRIPTION:
 
-Adds a send_csv method to ApplicationController
+Adds to ApplicationController a send_csv method working like send_file.
 
 == SYNOPSIS:
 
