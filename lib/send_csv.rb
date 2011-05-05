@@ -2,6 +2,8 @@ module SendCsv
   VERSION = '0.2'
 end
 
+# Based on http://stackoverflow.com/questions/3468858/rails-3-0-engine-execute-code-in-actioncontroller/3484141#3484141
+
 require 'action_controller'  # Make sure ActionController::Base is defined
 
 ActionController::Base.class_eval do
