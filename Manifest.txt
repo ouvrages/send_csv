@@ -3,6 +3,5 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
-bin/send_csv
 lib/send_csv.rb
 test/test_send_csv.rb
