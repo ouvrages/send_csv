@@ -12,7 +12,7 @@ Adds to ApplicationController a send_csv method working like send_file.
     def export
       lines = []
       lines << ["Name", "e-mail"]
-      lines += Users.all.map { |user| [user.name, user.email]
+      lines += Users.all.map { |user| [user.name, user.email] }
       send_csv(lines, :filename => "exported_users.csv")
     end
   end
