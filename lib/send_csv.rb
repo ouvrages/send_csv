@@ -27,7 +27,7 @@ ActionController::Base.class_eval do
     
     options = {
       :disposition => "attachment",
-      :type => 'text/plain',
+      :type => 'text/csv',
     }.merge(options)
     
     csv = generate_csv(lines, options)
