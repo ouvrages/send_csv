@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{send_csv}
-  s.version = "0.3"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ouvrages"]
-  s.date = %q{2011-06-23}
+  s.date = %q{2011-06-24}
   s.description = %q{Adds to ApplicationController a send_csv method working like send_file.}
   s.email = ["contact@ouvrages-web.fr"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]

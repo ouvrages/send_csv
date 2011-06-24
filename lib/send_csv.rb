@@ -1,5 +1,5 @@
 module SendCsv
-  VERSION = '0.3'
+  VERSION = '0.3.1'
 end
 
 # Based on http://stackoverflow.com/questions/3468858/rails-3-0-engine-execute-code-in-actioncontroller/3484141#3484141
