@@ -1,14 +1,7 @@
 module SendCsv
-  VERSION = '0.3.1'
-end
-
-# Based on http://stackoverflow.com/questions/3468858/rails-3-0-engine-execute-code-in-actioncontroller/3484141#3484141
-
-require 'action_controller'  # Make sure ActionController::Base is defined
-
-ActionController::Base.class_eval do
-  private
-
+  VERSION = '0.4'
+  
+  module_function
   def generate_csv(lines, options = {})
     require 'csv'
     
@@ -34,4 +27,14 @@ ActionController::Base.class_eval do
     
     send_data csv, options
   end
+end
+
+# Based on http://stackoverflow.com/questions/3468858/rails-3-0-engine-execute-code-in-actioncontroller/3484141#3484141
+
+require 'action_controller'  # Make sure ActionController::Base is defined
+
+ActionController::Base.class_eval do
+  private
+
+  include SendCsv
 end
