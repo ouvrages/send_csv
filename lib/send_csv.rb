@@ -1,3 +1,5 @@
+require 'iconv'
+
 module SendCsv
   VERSION = '0.4'
   
@@ -8,7 +10,7 @@ module SendCsv
     options = options.dup
     encoding = options.delete(:encoding) || 'ISO-8859-1'
     
-    csv = lines.map { |values| CSV.generate_line(values, ';') + "\r\n" }.join
+    csv = lines.map { |values| CSV.generate_line(values, :col_sep => ';', :row_sep => "\r\n") }.join
     csv = Iconv.conv(encoding, 'utf-8', csv)
     
     csv
