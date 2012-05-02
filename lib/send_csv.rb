@@ -29,14 +29,12 @@ module SendCsv
     
     send_data csv, options
   end
-end
-
-# Based on http://stackoverflow.com/questions/3468858/rails-3-0-engine-execute-code-in-actioncontroller/3484141#3484141
-
-require 'action_controller'  # Make sure ActionController::Base is defined
-
-ActionController::Base.class_eval do
-  private
-
-  include SendCsv
+  
+  class Engine < Rails::Engine    
+    initializer 'send_csv.controller' do |app|  
+      ActiveSupport.on_load(:action_controller) do  
+         include SendCsv  
+      end
+    end
+  end  
 end
