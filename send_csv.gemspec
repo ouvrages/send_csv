@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{send_csv}
-  s.version = "0.4"
+  s.version = "0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ouvrages"]
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = %q{Adds to ApplicationController a send_csv method working like send_file.}
   s.email = ["contact@ouvrages-web.fr"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
-  s.files = [".autotest", "History.txt", "Manifest.txt", "README.txt", "Rakefile", "lib/send_csv.rb", "test/test_send_csv.rb", ".gemtest"]
+  s.files = [".autotest", "History.txt", "Manifest.txt", "README.txt", "Rakefile", "lib/send_csv.rb", "test/test_send_csv.rb"]
   s.homepage = %q{https://github.com/ouvrages/send_csv}
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
