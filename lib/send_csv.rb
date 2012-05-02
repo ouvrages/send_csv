@@ -1,22 +1,24 @@
+require 'iconv'
+
 module SendCsv
-  VERSION = '0.4'
+  VERSION = '0.5'
   
   module_function
   def generate_csv(lines, options = {})
     require 'csv'
-    
+
     options = options.dup
-    encoding = options.delete(:encoding) || 'ISO-8859-1'
+    encoding = options.delete(:encoding) || 'ISO-8859-1//TRANSLIT'
     
     csv = lines.map { |values| CSV.generate_line(values, ';') + "\r\n" }.join
-    csv = Iconv.conv(encoding, 'utf-8', csv)
+    csv = Iconv.conv(encoding, 'UTF-8', csv)
     
     csv
   end
 
   def send_csv(lines, options = {})
     options = options.dup
-    encoding = options.delete(:encoding) || 'ISO-8859-1'
+    encoding = options.delete(:encoding) || 'ISO-8859-1//TRANSLIT'
     
     options = {
       :disposition => "attachment",
