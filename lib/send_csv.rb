@@ -1,5 +1,5 @@
 module SendCsv
-  VERSION = '0.5'
+  VERSION = '0.6'
   
   module_function
   def generate_csv(lines, options = {})

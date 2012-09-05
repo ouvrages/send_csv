@@ -19,6 +19,7 @@ Adds to ApplicationController a send_csv method working like send_file.
 
 == REQUIREMENTS:
 
+* since version 0.6: Ruby 1.9
 * csv (bundled with Ruby)
 * ApplicationController with a #send_file method (bundled with Rails)
 
